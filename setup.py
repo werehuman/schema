@@ -1,6 +1,13 @@
+import sys
 from setuptools import setup
 
 import schema
+
+
+if sys.version_info.major == 3:
+    long_description = open('README.rst', encoding='utf-8').read()
+else:
+    long_description = open('README.rst').read()
 
 
 setup(
@@ -13,7 +20,7 @@ setup(
     keywords="schema json validation",
     url="http://github.com/halst/schema",
     py_modules=['schema'],
-    long_description=open('README.rst').read(),
+    long_description=long_description,
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
